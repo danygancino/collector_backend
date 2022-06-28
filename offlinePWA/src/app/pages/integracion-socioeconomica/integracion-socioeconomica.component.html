@@ -1,0 +1,56 @@
+<div class="p-grid p-formgrid responsive">
+
+    <p-card header="MONTO TOTAL DE INGRESOS MENSUAL" class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-3">        
+        <span class="p-float-label" >
+            
+            <p-inputNumber id="nombreInput" [(ngModel)]="monto" mode="currency" currency="USD" locale="en-US" min="0" ></p-inputNumber>            
+            <label for="nombreInput">Promedio entre los últimos 3 meses</label>                       
+        </span>
+        <div class="p-d-flex p-jc-end">
+            <button (click)="saveMonto()" pButton type="button" class="p-button-secondary p-mr-2" style="margin-top: 1rem; " label="Guardar"
+            icon="pi pi-save"></button>
+        </div>
+        
+    </p-card>
+
+    <p-panel header="Información de integración" class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-3">
+        <ng-template pTemplate="icons">
+            <p-button label="+Integración" icon="pi pi-money" styleClass="p-button-info p-mr-2 p-mb-2"
+            (onClick)="nuevo()"></p-button>
+            <p-menu #menu id="config_menu" [model]="items" [popup]="true"></p-menu>
+        </ng-template>
+
+        <p-dataView #dv [value]="integracions" filterBy="nombre" [sortField]="sortField" [sortOrder]="sortOrder" layout="list">           
+        
+            <ng-template let-item pTemplate="listItem">
+                <div class="p-col-12">
+                    <div class="product-list-item">
+                        <div class="product-list-detail">
+                            <div class="product-name">{{catalogoService.getLabel('organizacionesApoyo',
+                                item.organizacionApoyoId)}} </div>
+        
+                            <div class="product-description"><span [class]="'product-badge status-instock'">Ayudas:
+                                    {{item.tiposAyudaIds.length}}</span></div>
+                            <!-- <div class="product-description">{{item.observaciones}}</div>                     -->
+                        </div>
+                        <div class="product-list-action">
+                            <button (click)="cargarIntegracion(item.id)" pButton type="button" class="p-button-secondary"
+                                icon="pi pi-angle-right"></button>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        
+        
+        
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td [attr.colspan]="columns.length">
+                        Esta familia aún no tiene integrantes
+                    </td>
+                </tr>
+            </ng-template>
+        </p-dataView>
+    </p-panel>
+</div>
+

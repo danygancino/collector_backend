@@ -1,0 +1,11 @@
+.idea/
+wildfly-17.0.1.Final/
+frontend/
+backend/target/
+backend/.idea/
+backend/avsi_backend.iml
+
+
+offlinePWA/dist/
+offlinePWA/tmp
+offlinePWA/node_modules

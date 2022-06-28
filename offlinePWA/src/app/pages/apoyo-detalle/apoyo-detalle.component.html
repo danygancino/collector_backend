@@ -1,0 +1,61 @@
+<div [formGroup]="formValue" novalidate *ngIf="catalogos && formValue">
+    <div class="p-grid p-formgrid  p-jc-center">
+
+        <p-panel class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" header="Datos del apoyo">
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-calendar formControlName="fecha" [style]="{ width: '100%'}"></p-calendar>
+                <label for="nombreInput">Fecha del apoyo*</label>
+                <span class="text-danger" *ngIf="submitted && formValue.controls['fecha'].errors?.required">
+                    Fecha del apoyo no válida
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.componentes" [ngModelOptions]="{standalone: true}" [(ngModel)]="componenteId" (ngModelChange)="loadTipoAsistencia($event)" optionLabel="nombre"
+                                    [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="organizaciones">Componente AVSI* </label>
+             
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="tiposAsistencia"  [ngModelOptions]="{standalone: true}" [(ngModel)]="tipoAsistencia" optionLabel="nombre" (ngModelChange)="isHabitabilidad($event)"
+                    optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="organizaciones">Apoyo acción AVSI* </label>
+               
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5" *ngIf="isHabitabilidad()">
+                <input id="nombreInput" style="width: 100%;" pInputText [ngModelOptions]="{standalone: true}" [(ngModel)]="nombre">
+                <label for="nombreInput">Nombres completos de la persona propietaria de la vivienda </label>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5" *ngIf="isHabitabilidad()">
+                <input id="numeroInput" style="width: 100%;" pInputText [ngModelOptions]="{standalone: true}" [(ngModel)]="numero">
+                <label for="numeroInput">Número De identificación de la persona propietaria de la vivienda</label>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5" *ngIf="isHabitabilidad()">
+                <input id="telefonoInput" style="width: 100%;" pInputText [ngModelOptions]="{standalone: true}" [(ngModel)]="telefono">
+                <label for="telefonoInput">Teléfono  de la persona propietaria de la vivienda</label>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5" *ngIf="isHabitabilidad()">
+                <p-inputNumber id="espaciosInput"  pInputText [ngModelOptions]="{standalone: true}" [(ngModel)]="espacios"></p-inputNumber>
+                <label for="espaciosInput">No. espacio habitable para multifamiliar</label>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <input id="obsInput" style="width: 100%;" pInputText formControlName="observacion">
+                <label for="obsInput">Observaciones</label>
+            </span>
+
+            <button style="width: 100%;" pButton type="button" label="Guardar" class="p-button-raised"
+            (click)="save()"></button>
+        </p-panel>
+      
+
+    </div>
+
+   
+</div>

@@ -1,0 +1,425 @@
+{
+	"componentes": [
+		{
+			"id": 1,
+			"nombre": "componentes 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "componentes 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "componentes 1",
+			"state": "ACTIVE"
+		}
+	],
+	"discapacidades": [
+		{
+			"id": 1,
+			"nombre": "discapacidades 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "discapacidades 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "discapacidades 1",
+			"state": "ACTIVE"
+		}
+	],
+	"estatutosMigratorios": [
+		{
+			"id": 1,
+			"nombre": "estatutosMigratorios 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "estatutosMigratorios 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "estatutosMigratorios 1",
+			"state": "ACTIVE"
+		}
+	],
+	"etnias": [
+		{
+			"id": 1,
+			"nombre": "etnias 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "etnias 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "etnias 1",
+			"state": "ACTIVE"
+		}
+	],
+	"generos": [
+		{
+			"id": 1,
+			"nombre": "generos 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "generos 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "generos 1",
+			"state": "ACTIVE"
+		}
+	],
+	"lgbtis": [
+		{
+			"id": 1,
+			"nombre": "lgbtis 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "lgbtis 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "lgbtis 1",
+			"state": "ACTIVE"
+		}
+	],
+	"motivosReferencias": [
+		{
+			"id": 1,
+			"nombre": "motivosReferencias 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "motivosReferencias 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "motivosReferencias 1",
+			"state": "ACTIVE"
+		}
+	],
+	"motivosSalidaPais": [
+		{
+			"id": 1,
+			"nombre": "motivosSalidaPais 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "motivosSalidaPais 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "motivosSalidaPais 1",
+			"state": "ACTIVE"
+		}
+	],
+	"nacionalidades": [
+		{
+			"id": 1,
+			"nombre": "nacionalidades 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "nacionalidades 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "nacionalidades 1",
+			"state": "ACTIVE"
+		}
+	],
+	"necesidadesEspecificasProteccion": [
+		{
+			"id": 1,
+			"nombre": "necesidadesEspecificasProteccion 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "necesidadesEspecificasProteccion 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "necesidadesEspecificasProteccion 1",
+			"state": "ACTIVE"
+		}
+	],
+	"necesidadesEspecificasHabitabilidad": [
+		{
+			"id": 1,
+			"nombre": "necesidadesEspecificasHabitabilidad 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "necesidadesEspecificasHabitabilidad 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "necesidadesEspecificasHabitabilidad 1",
+			"state": "ACTIVE"
+		}
+	],
+	"nivelesEscolaridad": [
+		{
+			"id": 1,
+			"nombre": "nivelesEscolaridad 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "nivelesEscolaridad 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "nivelesEscolaridad 1",
+			"state": "ACTIVE"
+		}
+	],
+	"nivelesParentesco": [
+		{
+			"id": 1,
+			"nombre": "nivelesParentesco 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "nivelesParentesco 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "nivelesParentesco 1",
+			"state": "ACTIVE"
+		}
+	],
+	"oficios": [
+		{
+			"id": 1,
+			"nombre": "oficios 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "oficios 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "oficios 1",
+			"state": "ACTIVE"
+		}
+	],
+	"organizacionesApoyo": [
+		{
+			"id": 1,
+			"nombre": "organizacionesApoyo 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "organizacionesApoyo 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "organizacionesApoyo 1",
+			"state": "ACTIVE"
+		}
+	],
+	"organizacionesReferencia": [
+		{
+			"id": 1,
+			"nombre": "organizacionesReferencia 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "organizacionesReferencia 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "organizacionesReferencia 1",
+			"state": "ACTIVE"
+		}
+	],
+	"profesiones": [
+		{
+			"id": 1,
+			"nombre": "profesiones 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "profesiones 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "profesiones 1",
+			"state": "ACTIVE"
+		}
+	],
+	"sexos": [
+		{
+			"id": 1,
+			"nombre": "sexos 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "sexos 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "sexos 1",
+			"state": "ACTIVE"
+		}
+	],
+	"situacionesMigratorias": [
+		{
+			"id": 1,
+			"nombre": "situacionesMigratorias 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "situacionesMigratorias 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "situacionesMigratorias 1",
+			"state": "ACTIVE"
+		}
+	],
+	"tiposAsistencia": [
+		{
+			"id": 1,
+			"nombre": "tiposAsistencia 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "tiposAsistencia 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "tiposAsistencia 1",
+			"state": "ACTIVE"
+		}
+	],
+	"tiposAyuda": [
+		{
+			"id": 1,
+			"nombre": "tiposAyuda 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "tiposAyuda 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "tiposAyuda 1",
+			"state": "ACTIVE"
+		}
+	],
+	"tiposDocumento": [
+		{
+			"id": 1,
+			"nombre": "tiposDocumento 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "tiposDocumento 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "tiposDocumento 1",
+			"state": "ACTIVE"
+		}
+	],
+	"tiposSeguimiento": [
+		{
+			"id": 1,
+			"nombre": "tiposSeguimiento 1",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 2,
+			"nombre": "tiposSeguimiento 2",
+			"state": "ACTIVE"
+		},
+		{
+			"id": 3,
+			"nombre": "tiposSeguimiento 1",
+			"state": "ACTIVE"
+		}
+	],
+	"paises": [
+		{
+			"id": 1,
+			"nombre": "Ecuador",
+			"state": "ACTIVE",
+			"provincias": [
+				{
+					"id": 1,
+					"nombre": "provincia 1",
+					"state": "ACTIVE",
+					"ciudades": [
+						{
+							"id": 1,
+							"nombre": "ciudad 1",
+							"state": "ACTIVE"
+						},
+						{
+							"id": 2,
+							"nombre": "ciudad 2",
+							"state": "ACTIVE"
+						}
+					]
+				},
+				{
+					"id": 1,
+					"nombre": "provincia 1",
+					"state": "ACTIVE",
+					"ciudades": null
+				}
+			]
+		}
+	]
+}

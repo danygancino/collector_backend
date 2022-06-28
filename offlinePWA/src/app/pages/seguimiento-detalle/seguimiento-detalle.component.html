@@ -1,0 +1,39 @@
+<div [formGroup]="formValue" novalidate *ngIf="catalogos && formValue">
+    <div class="p-grid p-formgrid p-jc-center">
+        <p-panel class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" header="Datos del seguimiento">
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-calendar formControlName="fecha" [style]="{ width: '100%'}"></p-calendar>
+                <label for="nombreInput">Fecha de seguimiento*</label><span class="text-danger" *ngIf="submitted && formValue.controls['fecha'].errors?.required">
+                    Fecha de seguimiento no válida
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.componentes" formControlName="componente"
+                    optionLabel="nombre"  optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="componente">Componente AVSI* </label>
+                <span class="text-danger" *ngIf="submitted && formValue.controls['componente'].errors?.required">
+                    Componente no válida
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.tiposSeguimiento" formControlName="tipoSeguimiento"
+                    optionLabel="nombre"  optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="tipoSeguimiento">Estado del caso* </label>
+                <span class="text-danger" *ngIf="submitted && formValue.controls['tipoSeguimiento'].errors?.required">
+                    Estado del caso no válida
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="observaciones">
+                <label for="nombreInput">Tipo de seguimiento</label>
+            </span>
+            <button style="width: 100%;" pButton type="button" label="Guardar" class="p-button-raised" (click)="saveIntegracion()"></button>
+        </p-panel>
+    </div>
+
+
+
+</div> 

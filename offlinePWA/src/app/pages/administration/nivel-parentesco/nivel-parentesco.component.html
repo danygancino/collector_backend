@@ -1,0 +1,102 @@
+<p-card>
+    <ng-template pTemplate="header">
+        <h5>{{title}}</h5>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <p-table #dt [columns]="cols" [value]="items" [paginator]="true" [rows]="10"
+                 [style]="{'width':'100%','overflow':'auto!important'}"
+                 [responsive]="true"
+                 [resizableColumns]="true"
+                 [autoLayout]="true"
+                 columnResizeMode="expand">
+            <ng-template pTemplate="caption">
+                <div style="text-align: right">
+                    <button type="button" pButton icon="pi pi-plus" (click)="create()" label="Crear nuevo"
+                            class="ui-button-info"></button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field" ariaLabel="Orden ascendente" ariaLabelDesc="Orden descendente"
+                                    ariaLabelAsc="Orden ascendente"></p-sortIcon>
+                    </th>
+                    <th>
+                        Editar
+                    </th>
+                <tr>
+                    <th *ngFor="let col of columns" [ngSwitch]="col.field">
+
+
+                        <p-columnFilter *ngSwitchCase="'state'" type="text" [field]="col.field" [showMenu]="false"
+                                        [matchMode]="'stateFilter'"></p-columnFilter>
+
+                        <p-columnFilter *ngSwitchDefault type="text" field={{col.field}}
+                                        [showMenu]="false"></p-columnFilter>
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns" [class]="col.styleClass">
+
+                        {{ col.type ? col.type.transform(utils.resolveFieldData(rowData, col.field), col.arg1, col.arg2, col.arg3) : utils.resolveFieldData(rowData, col.field) }}
+                    </td>
+                    <td>
+                        <button pButton icon="pi pi-pencil" (click)="edit(rowData)" class="p-button-text"
+                                label="editar"></button>
+                    </td>
+                </tr>
+            </ng-template>
+
+        </p-table>
+    </ng-template>
+</p-card>
+
+
+<p-dialog header="{{title}}" [(visible)]="showDialog" [closable]="false" [modal]="true" [style]="{width: '50vw'}">
+    <p-messages ></p-messages>
+    <form [formGroup]="catalogForm" *ngIf=" catalogForm!=null" (ngSubmit)="save()">
+
+
+        <div class="field grid p-m-2">
+            <label for="nombreInput" class="col-fixed" style="width:100px">Nombre*</label>
+            <div class="col">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="nombre"
+                       [style]="{'text-transform': 'uppercase'}">
+            </div>
+            <span class="text-danger"
+                  *ngIf="(catalogForm.controls['nombre'].touched || submitted) && catalogForm.controls['nombre'].errors?.required">
+                    Nombre no válido
+                </span>
+        </div>
+
+
+        <div class="field grid p-m-2">
+            <label for="stateInput" class="col-fixed" style="width:100px">Estado* </label>
+            <div class="col">
+                <p-dropdown id="stateInput" [options]="states" formControlName="state"
+                            [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+            </div>
+            <span class="text-danger"
+                  *ngIf="submitted && catalogForm.controls['state'].errors?.required">
+                    Estado no válido
+                </span>
+        </div>
+        <div class="field grid p-m-2">
+            <p-footer class="p-grid p-jc-end">
+                <button pButton type="submit" label="Guardar" icon="pi pi-check" class="p-col-3 p-md-3 p-m-3  p-p-2"
+                        ></button>
+                <button type="button" pButton icon="pi pi-times" class="p-col-3 p-md-3 p-m-3 p-p-2"
+                        (click)="closeDialog()"
+                        label="Cancelar"></button>
+            </p-footer>
+        </div>
+    </form>
+</p-dialog>

@@ -1,0 +1,42 @@
+
+<p-dataView #dv [value]="beneficiarios" filterBy="nombre" [sortField]="sortField" [sortOrder]="sortOrder" layout="list">
+    <ng-template pTemplate="header">
+        <div class="p-d-flex p-jc-between">
+            <div class="p-d-flex p-jc-start">
+                <span class="p-input-icon-left p-mr-2">
+                    <i class="pi pi-search"></i>
+                    <input (keydown.enter)="searchBeneficiariosByQuery($event)" type="search" pInputText
+                        placeholder="Buscar" [(ngModel)]="queryFilter" />
+                </span>
+
+                <p-button icon="pi pi-search" (click)="searchBeneficiariosByQuery()" 
+                    styleClass="p-button-info p-mr-2 p-mb-2"></p-button>
+            </div>
+            <p-button label="+Grupo familiar" icon="pi pi-users" (click)="createGrupoFamiliar()"
+                styleClass="p-button-info p-mr-2 p-mb-2"></p-button>
+        </div>
+    </ng-template>
+
+    <ng-template let-beneficiario pTemplate="listItem">
+        <div class="p-col-12">
+            <div class="product-list-item">
+                <div class="product-list-detail">
+                    <div class="product-name">{{beneficiario.nombres}} <span [ngClass]="beneficiario.nivelParentescoId==1?'product-badge status-instock':'product-badge'"
+                            >{{catalogoService.getLabel('nivelesParentesco',
+                            beneficiario.nivelParentescoId)}}</span>
+                    </div>
+                    <div class="product-description">{{beneficiario.numeroDocumento}} - <strong>{{beneficiario.grupoFamiliarCode}}</strong></div>
+
+                    <i class="pi pi-calendar-times product-category-icon"></i><span
+                        class="product-category">{{beneficiario.fechaNacimiento| date:'dd/MM/yyyy'}} - 
+                        {{utilService.getEdad(beneficiario.fechaNacimiento)}}
+                        años</span>
+                </div>
+                <div class="product-list-action">
+                    <button (click)="showGrupoDeFamiliar(beneficiario)" pButton type="button" class="p-button-secondary" label="Ver GF" iconPos="right"
+                        icon="pi pi-angle-right"></button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-dataView>

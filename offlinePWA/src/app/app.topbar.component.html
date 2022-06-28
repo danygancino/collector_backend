@@ -1,0 +1,71 @@
+<div class="layout-topbar">
+    <div class="topbar-left">
+        <a tabindex="0" class="menu-button" (click)="appMain.onMenuButtonClick($event)">
+            <i class="pi pi-chevron-left"></i>
+        </a>
+        <span class="topbar-separator"></span>
+        <ng-template ngFor let-item let-last="last" [ngForOf]="items">
+            <span class="viewname" style="text-transform: uppercase">{{item.label}}</span>
+        </ng-template>
+        <div></div>
+        <!-- <img id="logo-mobile" class="mobile-logo" [src]="'assets/layout/images/logo-'+ (app.colorScheme === 'light' ? 'dark' : 'white') + '.svg'" alt="diamond-layout" /> -->
+    </div>
+
+    <div class="topbar-right">
+        <ul class="topbar-menu">
+            <li class="profile-item" [ngClass]="{'active-menuitem fadeInDown': appMain.topbarUserMenuActive}">
+                <!-- <a href="#" tabindex="0" (click)="back()">
+                    <i class="pi pi-arrow-left"></i>
+                    <span style="width: 1.5rem;" class="topbar-badge">{{dirtyDataCount}}</span>
+                </a> -->
+            </li>
+            <li class='notifications-item' [ngClass]="{'active-menuitem ': appMain.topbarNotificationMenuActive}" *ngIf="!userService.hasRole('ADMINISTRADOR')">
+                <a href="#" tabindex="0" (click)="opentTopBar($event)">
+                    <i class="pi pi-undo"></i>
+                    <span style="width: 1.5rem;" class="topbar-badge">{{dirtyDataCount}}</span>
+                </a>
+                <ul class="notifications-menu fade-in-up">
+                    <li role="menuitem">
+                        <div style="display: flex; align-items: center;padding: 10px;">
+                            <i class="pi pi-cloud"></i>
+                            <div class="notification-item">
+                                <div class="notification-summary">Estado de conexión</div>
+                                <div class="notification-detail">Usted <strong>{{conectionStatus}} está</strong> en línea.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li role="menuitem">
+                        <div style="display: flex; align-items: center;padding: 10px;">
+                            <i class="pi pi-download"></i>
+                            <div class="notification-item">
+                                <div class="notification-summary">Última sincronización</div>
+                                <div class="notification-detail">Usted se sincronizó el <strong>{{lastSyncDate | date:"yyyy/MM/dd hh:mm:ss a"}}</strong></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li role="menuitem">
+                        <div style="display: flex; align-items: center;padding: 10px;">
+                            <i class="pi pi-upload"></i>
+                            <div class="notification-item">
+                                <div class="notification-summary">Datos por sincronizar</div>
+                                <div class="notification-detail">Usted tiene <strong>{{dirtyDataCount}}</strong> registros pendientes por sincronizar.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li role="menuitem">
+                        <div style="display: flex; align-items: center;padding: 10px;">
+                            <button icon="pi pi-undo" iconPos="left" style="width: 100%;" pButton type="button" label="Actualizar ahora" class="p-button-raised" (click)="sync()"></button>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li class="right-sidebar-item">
+                <a href="#" tabindex="0" (click)="appMain.onRightMenuClick($event)">
+                    <i class="pi pi-align-right"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

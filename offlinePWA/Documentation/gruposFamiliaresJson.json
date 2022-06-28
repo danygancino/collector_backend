@@ -1,0 +1,236 @@
+[
+	{
+		"id": "d16c7ac9-3f66-433d-81ee-ff3bc5361f16",
+		"grupoFamiliarId": null,
+		"beneficiarios": [
+			{
+				"id": "14ee497a-d84c-411c-b6b6-4483063fff56",
+				"nombres": "Dany Gancino",
+				"nivelParentescoId": 1,
+				"sexoId": 1,
+				"fechaNacimiento": "1991-06-22T00:00:00.000",
+				"edad": 20,
+				"generoId": 1,
+				"lgbtiId": 1,
+				"etniaId": 1,
+				"nacionalidadId": 1,
+				"discapacidadId": 1,
+				"fechaIngresoPais": "2011-06-22T00:00:00.000",
+				"tipoDocumentoId": 1,
+				"numeroDocumento": "1712771284",
+				"estatutoMigratorioId": 1,
+				"situacionMigratoriaId": 1,
+				"motivoSalidaPaisId": 1,
+				"ciudadId": 1,
+				"sector": "San Carlos",
+				"direccion": "direccion",
+				"telefono": "2432854",
+				"nivelEscolaridadId": 1,
+				"profesionesIds": [
+					1,
+					2
+				],
+				"oficiosIds": [
+					1,
+					2
+				],
+				"observaciones": "observaciones",
+				"integracionesSocioEconomicas": [
+					{
+						"id": "802940b6-963d-4789-8bf5-87cc02451e01",
+						"organizacionApoyoId": 1,
+						"tiposAyudaIds": [
+							1,
+							2
+						],
+						"observaciones": "observacion integracion"
+					},
+					{
+						"id": "5aeadadc-c254-4990-b2fc-c3b40370217f",
+						"organizacionApoyoId": 1,
+						"tiposAyudaIds": [
+							1,
+							2
+						],
+						"observaciones": "observacion integracion"
+					}
+				],
+				"necesidadesEspecificas": [
+					{
+						"id": "31fc98fc-0d86-41be-b20f-9b98db23d011",
+						"necesidadEspecificasProteccionIds": [
+							1,
+							2
+						],
+						"necesidadEspecificasHabitabilidadIds": [
+							1,
+							2
+						],
+						"observaciones": null
+					},
+					{
+						"id": "736ad182-fc1b-4c9e-a074-b44c94b6fa54",
+						"necesidadEspecificasProteccionIds": [
+							1,
+							2
+						],
+						"necesidadEspecificasHabitabilidadIds": [
+							1,
+							2
+						],
+						"observaciones": null
+					}
+				],
+				"seguimientos": [
+					{
+						"id": "7a4770aa-f221-4351-9710-37b6b58cd1f7",
+						"fecha": "2021-06-22T00:00:00.000",
+						"componenteId": 1,
+						"tipoSeguimientoId": 1,
+						"observaciones": "observacion seguimiento"
+					},
+					{
+						"id": "3ba1df61-aa71-47d2-a916-e67e4b3c01e6",
+						"fecha": "2021-06-22T00:00:00.000",
+						"componenteId": 1,
+						"tipoSeguimientoId": 1,
+						"observaciones": "observacion seguimiento"
+					}
+				]
+			}
+		],
+		"montoIngresosMensual": 1000.1,
+		"asistencias": [],
+		"referencias": [
+			{
+				"id": "85b5b9bc-cbb2-4fef-927c-7fe7effb4d86",
+				"fecha": "2021-06-22T00:00:00.000",
+				"beneficiariosIds": [
+					"14ee497a-d84c-411c-b6b6-4483063fff56"
+				],
+				"organizacionesReferenciaIds": 1,
+				"motivosReferenciaIds": [
+					1,
+					2
+				]
+			}
+		]
+	},
+	{
+		"id": "a1fe8551-8f4d-415b-ae9f-f77a414df75a",
+		"grupoFamiliarId": null,
+		"beneficiarios": [
+			{
+				"id": "84fff38b-5703-44e4-b036-9bac9fd4f687",
+				"nombres": "Dany Gancino",
+				"nivelParentescoId": 1,
+				"sexoId": 1,
+				"fechaNacimiento": "1991-06-22T00:00:00.000",
+				"edad": 20,
+				"generoId": 1,
+				"lgbtiId": 1,
+				"etniaId": 1,
+				"nacionalidadId": 1,
+				"discapacidadId": 1,
+				"fechaIngresoPais": "2011-06-22T00:00:00.000",
+				"tipoDocumentoId": 1,
+				"numeroDocumento": "1712771284",
+				"estatutoMigratorioId": 1,
+				"situacionMigratoriaId": 1,
+				"motivoSalidaPaisId": 1,
+				"ciudadId": 1,
+				"sector": "San Carlos",
+				"direccion": "direccion",
+				"telefono": "2432854",
+				"nivelEscolaridadId": 1,
+				"profesionesIds": [
+					1,
+					2
+				],
+				"oficiosIds": [
+					1,
+					2
+				],
+				"observaciones": "observaciones",
+				"integracionesSocioEconomicas": [
+					{
+						"id": "1c21a0f3-e5c5-4db9-b04b-fac7aaa7c195",
+						"organizacionApoyoId": 1,
+						"tiposAyudaIds": [
+							1,
+							2
+						],
+						"observaciones": "observacion integracion"
+					},
+					{
+						"id": "72e58d2d-9e30-4d6a-b949-929b40cad221",
+						"organizacionApoyoId": 1,
+						"tiposAyudaIds": [
+							1,
+							2
+						],
+						"observaciones": "observacion integracion"
+					}
+				],
+				"necesidadesEspecificas": [
+					{
+						"id": "1117809f-c2fc-4d5d-9b9e-7df773b9a607",
+						"necesidadEspecificasProteccionIds": [
+							1,
+							2
+						],
+						"necesidadEspecificasHabitabilidadIds": [
+							1,
+							2
+						],
+						"observaciones": null
+					},
+					{
+						"id": "c9217a65-b296-4101-9d1d-4a45528bc808",
+						"necesidadEspecificasProteccionIds": [
+							1,
+							2
+						],
+						"necesidadEspecificasHabitabilidadIds": [
+							1,
+							2
+						],
+						"observaciones": null
+					}
+				],
+				"seguimientos": [
+					{
+						"id": "0a15b9fb-1f85-47e1-aa41-af13a347e75c",
+						"fecha": "2021-06-22T00:00:00.000",
+						"componenteId": 1,
+						"tipoSeguimientoId": 1,
+						"observaciones": "observacion seguimiento"
+					},
+					{
+						"id": "1a89359d-b62d-4b5d-bcf3-87b737db729b",
+						"fecha": "2021-06-22T00:00:00.000",
+						"componenteId": 1,
+						"tipoSeguimientoId": 1,
+						"observaciones": "observacion seguimiento"
+					}
+				]
+			}
+		],
+		"montoIngresosMensual": 1000.1,
+		"asistencias": [],
+		"referencias": [
+			{
+				"id": "ecb6372c-4014-4dbf-85ac-10af6065902a",
+				"fecha": "2021-06-22T00:00:00.000",
+				"beneficiariosIds": [
+					"84fff38b-5703-44e4-b036-9bac9fd4f687"
+				],
+				"organizacionesReferenciaIds": 1,
+				"motivosReferenciaIds": [
+					1,
+					2
+				]
+			}
+		]
+	}
+]

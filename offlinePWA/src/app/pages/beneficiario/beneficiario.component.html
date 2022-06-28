@@ -1,0 +1,213 @@
+
+<form [formGroup]="beneficiarioForm" *ngIf="catalogos!=null && beneficiarioForm!=null">
+    <p-messages severity="warn" *ngIf="grupoFamiliar.beneficiarios.length == 0">
+        <ng-template pTemplate>
+            <span class="custom-message">El primer integrante de familia será considerado como Punto Focal Familiar.</span>
+        </ng-template>
+    </p-messages>
+    <div class="p-grid p-formgrid responsive" >
+        <p-panel header="Datos del beneficiario 1" class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-3" [toggleable]="true">
+
+            <span class="p-float-label p-mr-5 p-mb-5" style="margin-top: 1rem">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="nombres"
+                    [style]="{'text-transform': 'uppercase'}">
+                <label for="nombreInput">Nombres y Apellidos*</label>
+                <span class="text-danger"
+                    *ngIf="(beneficiarioForm.controls['nombres'].touched || submitted) && beneficiarioForm.controls['nombres'].errors?.required">
+                    Nombres y Apellidos no válido
+                </span>
+            </span>
+
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.nivelesParentesco" formControlName="nivelParentescoId"
+                    optionLabel="nombre" optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="nombreInput">Nivel de parentesco* </label>
+                <span class="text-danger"
+                    *ngIf="submitted && beneficiarioForm.controls['nivelParentescoId'].errors?.required">
+                    Nivel de parentesco no válido
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.sexos" formControlName="sexoId" optionLabel="nombre" optionValue="id"
+                    [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="nombreInput">Sexo de nacimiento*</label>
+                <span class="text-danger" *ngIf="submitted && beneficiarioForm.get('sexoId').errors?.required">
+                    Sexo de nacimiento no válido
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.generos" formControlName="generoId" optionLabel="nombre"
+                    optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="nombreInput">Género con el que se identifica</label>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.lgbtis" formControlName="lgbtiId" optionLabel="nombre" optionValue="id"
+                    [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="nombreInput">Persona LGBTIQ+ *</label>
+                <span class="text-danger" *ngIf="submitted && beneficiarioForm.controls['lgbtiId'].errors?.required">
+                    Persona LGBTIQ+ no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-calendar formControlName="fechaNacimiento" [style]="{ width: '100%'}" [monthNavigator]="true"
+                    [yearNavigator]="true" yearRange="{{minDate.getFullYear()}}:{{maxDate.getFullYear()}}"
+                    [maxDate]="maxDate" [minDate]="minDate"></p-calendar>
+                <label for="nombreInput">Fecha de nacimiento*</label>
+                <span class="text-danger"
+                    *ngIf="submitted && beneficiarioForm.controls['fechaNacimiento'].errors?.required">
+                    Fecha de nacimiento no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.nacionalidades" formControlName="nacionalidadId" optionLabel="nombre"
+                    optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="nombreInput">Nacionalidad*</label>
+                <span class="text-danger"
+                    *ngIf="submitted && beneficiarioForm.controls['nacionalidadId'].errors?.required">
+                    Nacionalidad no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.etnias" formControlName="etniaId" optionLabel="nombre" optionValue="id"
+                    [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="nombreInput">Etnia con la que se identifica*</label>
+                <span class="text-danger" *ngIf="submitted && beneficiarioForm.controls['etniaId'].errors?.required">
+                    Etnia con la que se identifica no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.discapacidades" formControlName="discapacidadId" optionLabel="nombre"
+                    optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="nombreInput">Posee algún tipo de discapacidad*</label>
+                <span class="text-danger"
+                    *ngIf="submitted && beneficiarioForm.controls['discapacidadId'].errors?.required">
+                    Posee algún tipo de discapacidad no válido
+                </span>
+            </span>
+        </p-panel>
+        <p-panel header="Datos del beneficiario 2" class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-3"  [toggleable]="true">
+            <span class="p-float-label p-mr-5 p-mb-5" style="margin-top: 1rem">
+                <p-calendar formControlName="fechaIngresoPais" [style]="{ width: '100%'}" [monthNavigator]="true"
+                    [yearNavigator]="true" [maxDate]="maxDate" [minDate]="minDate"
+                    yearRange="{{minDate.getFullYear()}}:{{maxDate.getFullYear()}}"></p-calendar>
+                <label for="nombreInput">Fecha ingreso al país de acogida</label>
+                <span class="text-danger"
+                    *ngIf="submitted && beneficiarioForm.controls['fechaIngresoPais'].errors?.required">
+                    Fecha ingreso al país de acogida no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.tiposDocumento" formControlName="tipoDocumentoId" optionLabel="nombre"
+                    optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="nombreInput">Tipo de documento*</label>
+                <span class="text-danger"
+                    *ngIf="submitted && beneficiarioForm.controls['tipoDocumentoId'].errors?.required">
+                    Tipo de documento no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="numeroDocumento">
+                <label for="nombreInput">Número de documento de identidad*</label>
+                <span class="text-danger"
+                    *ngIf="submitted && beneficiarioForm.controls['numeroDocumento'].errors?.required">
+                    Número de documento de identidad no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.estatutosMigratorios" formControlName="estatutoMigratorioId"
+                    optionLabel="nombre" optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="nombreInput">Estatuto migratorio*</label>
+                <span class="text-danger"
+                    *ngIf="submitted && beneficiarioForm.controls['estatutoMigratorioId'].errors?.required">
+                    Estatuto migratorio no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.situacionesMigratorias" formControlName="situacionMigratoriaId"
+                    optionLabel="nombre" optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="nombreInput">Situación migratoria*</label>
+                <span class="text-danger"
+                    *ngIf=" submitted && beneficiarioForm.controls['situacionMigratoriaId'].errors?.required">
+                    Situación migratoria no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.motivosSalidaPais" formControlName="motivoSalidaPaisId"
+                    optionLabel="nombre" optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="nombreInput">Motivo de salida del país</label>
+            </span>
+        </p-panel>
+        <p-panel header="Datos del beneficiario 3" class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-3"  [toggleable]="true">
+            <span class="p-float-label p-mr-5 p-mb-5" style="margin-top: 1rem">
+                <p-cascadeSelect [options]="pais.provincias" optionLabel="nombre" optionValue="id"
+                    optionGroupLabel="nombre" formControlName="ciudadId" [optionGroupChildren]="['ciudades']"
+                    [style]="{'minWidth': '14rem'}">
+                </p-cascadeSelect>
+                <label for="nombreInput">Ciudad*</label>
+                <span class="text-danger" *ngIf="submitted && beneficiarioForm.controls['ciudadId'].errors?.required">
+                    Ciudad no válida
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="sector"
+                    [style]="{'text-transform': 'uppercase'}">
+                <label for="nombreInput">Parroquia/Barrio</label>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="direccion"
+                    [style]="{'text-transform': 'uppercase'}">
+                <label for="nombreInput">Dirección</label>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="telefono">
+                <label for="nombreInput">Teléfono*</label>
+                <span class="text-danger"
+                    *ngIf="(beneficiarioForm.controls['telefono'].touched || submitted) && beneficiarioForm.controls['telefono'].errors?.required">
+                    Teléfono no válido
+                </span>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.nivelesEscolaridad" formControlName="nivelEscolaridadId"
+                    optionLabel="nombre" optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="nombreInput">Nivel de escolaridad terminado</label>
+
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-multiSelect [(ngModel)]="profesionesIds" [options]="catalogos.profesiones" optionLabel="nombre"
+                    optionValue="id" [ngModelOptions]="{standalone: true}"></p-multiSelect>
+                <label for="nombreInput">Profesión</label>
+            </span>
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-multiSelect [(ngModel)]="oficiosIds" [options]="catalogos.oficios" optionLabel="nombre" optionValue="id"
+                    [ngModelOptions]="{standalone: true}"></p-multiSelect>
+                <label for="nombreInput">Oficio</label>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <textarea style="width: 100%;" pInputTextarea formControlName="observaciones"></textarea>
+                <label for="nombreInput">Observaciones</label>
+            </span>
+        </p-panel>
+    </div>
+
+
+</form>
+
+<footer>
+    <button style="width: 100%;" pButton type="button" label="Guardar" class="p-button-raised"
+        (click)="saveBeneficiario()"></button>
+</footer>
+<!-- <p>Form value: {{ beneficiarioForm.value | json }}</p>
+<p>Form status: {{ beneficiarioForm.status | json }}</p> -->

@@ -1,0 +1,40 @@
+<p-panel header="Integrantes del grupo familiar" >
+
+    <ng-template pTemplate="icons">
+        <button pButton icon="pi pi-angle-down" label="Acciones" (click)="menu.toggle($event)"  iconPos="right"></button>
+        <p-menu #menu id="config_menu" [model]="items" [popup]="true"></p-menu>
+    </ng-template>
+
+
+    <p-dataView [value]="beneficiarios" filterBy="beneficiario.nombres" [sortField]="sortField" [sortOrder]="sortOrder"
+        layout="list">
+        <ng-template let-beneficiario pTemplate="listItem">
+            <div class="p-col-12">
+                <div class="product-list-item" [ngClass]="{jefeFamilia: beneficiario.nivelParentescoId==1}">
+                    <div class="product-list-detail">
+                        <div class="product-name">{{beneficiario.nombres}} <span [ngClass]="'product-badge'">{{catalogoService.getLabel('nivelesParentesco',beneficiario.nivelParentescoId)}}</span>
+                        </div>
+                        <div class="product-description">{{beneficiario.numeroDocumento}}</div>
+
+                        <i class="pi pi-calendar-times product-category-icon"></i>
+                        <span class="product-category">{{beneficiario.fechaNacimiento | date:'dd/MM/yyyy'}} - 
+                            {{utilService.getEdad(beneficiario.fechaNacimiento)}}
+                            años</span>
+                    </div>
+                    <div class="product-list-action">
+                        <button (click)="cargarBeneficiario(beneficiario.id)" pButton type="button" label="Editar" iconPos="right"
+                            class="p-button-secondary" icon="pi pi-angle-right"></button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td [attr.colspan]="columns.length">
+                    Esta familia aún no tiene integrantes
+                </td>
+            </tr>
+        </ng-template>
+    </p-dataView>
+</p-panel>

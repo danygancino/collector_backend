@@ -1,0 +1,50 @@
+<p-overlayPanel #op>
+    <ng-template pTemplate>
+        Recuerda, los valores que no son editables como ADULTO/A MAYOR, son calculados automáticamente de acuerdo a los datos ingresado dentro de los integrantes de familia
+    </ng-template>
+</p-overlayPanel>
+
+
+
+<form novalidate *ngIf="catalogos">
+    <div class="p-grid p-formgrid p-jc-center ">
+        <p-panel header="Necesidades de protección" class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+            <ng-template pTemplate="icons">
+                <button pButton type="button" icon="pi pi-question" iconPos="left"  (click)="op.toggle($event)"></button>
+            </ng-template>
+            <div *ngFor="let necesidad of necesidadesEspecificasProteccion" class="p-d-flex p-jc-between"
+                style="padding: 1rem;">
+                <label class="p-mb-2 p-mr-2 "
+                    for="nombreInput">{{catalogoService.getLabel('necesidadesEspecificasProteccion',
+                    necesidad.necesidadEspecificaProteccionId)}}
+                </label>
+                <label class="p-mb-2 p-mr-2 " *ngIf="disableNecesidadesProteccion.indexOf(necesidad.necesidadEspecificaProteccionId)>=0"
+                   >{{necesidad.cantidad}}
+                </label>
+                <p-inputNumber [(ngModel)]="necesidad.cantidad" name="{{necesidad.cantidad}}" *ngIf="disableNecesidadesProteccion.indexOf(necesidad.necesidadEspecificaProteccionId)<0"
+                    inputStyleClass="inputNumberClass" class="p-mb-1 p-mr-1" id="nombreInput" [min]="0" [showButtons]="true">
+                </p-inputNumber>
+            </div>
+        </p-panel>
+
+       
+
+        <p-panel header="Necesidades de habitabilidad" class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+            <div *ngFor="let necesidad of necesidadesEspecificasHabitabilidad" class="p-d-flex p-jc-between"
+                style="padding: 1rem;">
+                <label class="p-mb-2 p-mr-2 ">{{catalogoService.getLabel('necesidadesEspecificasHabitabilidad',
+                    necesidad.necesidadEspecificaHabitabilidadId)}}
+                </label>
+                <input type="checkbox" [checked]="necesidad.cantidad"  value="1" [(ngModel)]="necesidad.cantidad" [ngModelOptions]="{standalone: true}" />
+
+
+            </div>
+        </p-panel>
+
+    </div>
+    <footer>
+
+        <button style="width: 100%;" pButton type="button" label="Guardar" class="p-button-raised"
+            (click)="saveNecesidades()"></button>
+    </footer>
+</form>

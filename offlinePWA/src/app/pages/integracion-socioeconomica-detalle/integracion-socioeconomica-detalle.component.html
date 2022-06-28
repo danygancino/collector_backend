@@ -1,0 +1,33 @@
+<div [formGroup]="formValue" novalidate *ngIf="catalogos && formValue">
+
+    <div class="p-grid p-formgrid p-jc-center">
+        <p-panel header="Datos de la información socioeconómica" class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.organizacionesApoyo" formControlName="organizaciones"
+                    optionLabel="nombre" optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}">
+                </p-dropdown>
+                <label for="organizaciones">Organización ha recibido apoyo* </label>
+                <span class="text-danger" *ngIf="submitted && formValue.controls['organizaciones'].errors?.required">
+                    Organización ha recibido apoyo no válida
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-multiSelect [(ngModel)]="tiposAyuda" [options]="catalogos.tiposAyuda" optionLabel="nombre"
+                    optionValue="id" required="true" [ngModelOptions]="{standalone: true}"></p-multiSelect>
+                <label for="nombreInput">Tipo de ayuda recibida</label>
+            </span>
+
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="observaciones">
+                <label for="nombreInput">Observaciones</label>
+            </span>
+            <button style="width: 100%;" pButton type="button" label="Guardar" class="p-button-raised"
+            (click)="saveIntegracion()"></button>
+        </p-panel>
+    </div>
+
+   
+
+</div>

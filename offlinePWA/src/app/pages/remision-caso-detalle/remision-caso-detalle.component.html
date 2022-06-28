@@ -1,0 +1,35 @@
+<div [formGroup]="formValue" novalidate *ngIf="catalogos && formValue">
+    <div class="p-grid p-formgrid p-jc-center">
+        <p-panel class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" header="Datos de la   ">
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-calendar formControlName="fecha" [style]="{ width: '100%'}"></p-calendar>
+                <label for="nombreInput">Fecha de remisión*</label><span class="text-danger" *ngIf="submitted && formValue.controls['fecha'].errors?.required">
+                    Fecha de remisión no válida
+                </span>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-dropdown [options]="catalogos.organizacionesApoyo" formControlName="organizacion"
+                    optionLabel="nombre"  optionValue="id" [autoDisplayFirst]="false" [style]="{ width: '100%'}"></p-dropdown>
+                <label for="organizaciones">Organización a la cual fue remitido* </label><span class="text-danger" *ngIf="submitted && formValue.controls['organizacion'].errors?.required">
+                    Organización a la cual fue remitido no válid
+                </span>
+            </span>           
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <p-multiSelect [(ngModel)]="motivos" [options]="catalogos.motivosReferencias" optionLabel="nombre"  optionValue="id"
+                    [ngModelOptions]="{standalone: true}"></p-multiSelect>
+                <label for="nombreInput">Motivos</label>
+            </span>
+
+            <span class="p-float-label p-mr-5 p-mb-5">
+                <input id="nombreInput" style="width: 100%;" pInputText formControlName="observacion">
+                <label for="nombreInput">Observaciones</label>
+            </span>
+            <button style="width: 100%;" pButton type="button" label="Guardar" class="p-button-raised" (click)="save()"></button>
+        </p-panel>
+    </div>
+
+   
+
+</div> 

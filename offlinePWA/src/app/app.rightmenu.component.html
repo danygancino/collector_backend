@@ -1,0 +1,44 @@
+<div class="layout-sidebar-right" [ngClass]="{'layout-sidebar-right-active': appMain.rightMenuActive}"
+    (click)="appMain.rightMenuClick = true">
+    <h5>Información</h5>
+    <div class="widget-timeline">
+
+
+        <div class="timeline-event">
+            <span class="timeline-event-icon" style="background-color:#7986CB">
+                <i class="timeline-icon pi pi-user"></i>
+            </span>
+            <div class="timeline-event-title">Datos del usuario</div>
+            <div class="timeline-event-detail"><strong>Nombre: </strong> {{user.name}}</div>
+            <div class="timeline-event-detail"><strong>Correo: </strong> {{user.email}}</div>
+            <div class="timeline-event-detail"><strong>Usuario: </strong> {{user.username}}</div>
+        </div>
+
+        <div class="timeline-event">
+            <span class="timeline-event-icon" style="background-color:#64B5F6">
+                <i class="pi pi-users"></i>
+            </span>
+            <div class="timeline-event-title">Roles</div>
+            <div *ngFor="let rol of roles">
+                <div class="timeline-event-detail"> {{rol.name}} </div>
+            </div>
+        </div>
+
+        <div class="timeline-event">
+            <span class="timeline-event-icon" style="background-color:#64B5F6">
+                <i class="pi pi-inbox"></i>
+            </span>
+
+            <div class="timeline-event-title">Versión Offline</div>
+
+            <div class="timeline-event-detail"> 0.8.5 </div>
+        </div>
+
+        <p-confirmDialog header="Cerrar sesión" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+        <button (click)="confirm()" pButton type="button" class="p-button-danger" label="Salir" iconPos="right"
+            style="width: 100%;" icon="pi pi-logout"></button>
+
+
+
+
+    </div>

@@ -1,0 +1,39 @@
+<p-dataView #dv [value]="asistencias" filterBy="nombre" [sortField]="sortField" [sortOrder]="sortOrder" layout="list">
+    <ng-template pTemplate="header">
+        <div class="p-d-flex  p-jc-end">
+
+
+            <p-button label="+Apoyo AVSI" icon="pi pi-money" styleClass="p-button-info p-mr-2 p-mb-2"
+                (onClick)="nuevo()"></p-button>
+
+        </div>
+    </ng-template>
+
+    <ng-template let-item pTemplate="listItem">
+        <div class="p-col-12">
+            <div class="product-list-item">
+                <div class="product-list-detail">
+                    <div class="product-name">{{catalogoService.getLabel('componentes',item.componenteId)}} </div>
+
+                    <div class="product-description"><span
+                        [class]="'product-badge status-instock'">Apoyo: {{catalogoService.getLabel('tiposAsistencia', item.tipoAsistenciaId)}}</span></div>                    
+                    <div class="product-description">{{item.fecha | date:'dd/MM/yyyy'}}</div>                    
+                </div>
+                <div class="product-list-action">
+                    <button (click)="cargarApoyo(item.id)" pButton type="button"
+                        class="p-button-secondary" icon="pi pi-angle-right"></button>   
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td [attr.colspan]="columns.length">
+                Esta familia aún no tiene integrantes
+            </td>
+        </tr>
+    </ng-template>
+</p-dataView>
